@@ -1,0 +1,13 @@
+# Laravel Backend 
+/software-blog-system-api/vendor/
+/software-blog-system-api/storage/
+/software-blog-system-api/node_modules/
+/software-blog-system-api/.env 
+
+# Vue Frontend 
+/software-blog-system/node_modules/
+software-blog-system/dist/
+
+# General 
+.DS_Store 
+.env 
