@@ -12,22 +12,16 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable, HasRoles;
 
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+    protected $fillable = ['name','email','password','bio','avatar' ,'cover'];
+    protected $hidden = ['password','remember_token',];
 
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
+    public function comments(){
 
-    protected function casts(): array
-    {
-        return [
-            'email_verified_at' => 'datetime',
-            'password' => 'hashed',
-        ];
+        return $this->hasMany(Comment::class);
+    }
+
+    public function likes(){
+
+        return $this->hasMany(Like::class);
     }
 }
