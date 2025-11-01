@@ -14,7 +14,6 @@ class PermissionSeeder extends Seeder
     {
         # Permissions
         $permissions = [
-            'browse posts' ,
             'create new post' ,
             'edit post' ,
             'delete post' ,
@@ -33,14 +32,10 @@ class PermissionSeeder extends Seeder
         }
 
         # Roles
-        $guest = Role::findByName('guest');
         $user  = Role::findByName('user');
         $admin = Role::findByName('admin');
-
+        
         # Assign Permission To Role
-        $guest->givePermissionTo('browse posts');
-
-        $user->givePermissionTo('browse posts');
         $user->givePermissionTo('create new post');
         $user->givePermissionTo('edit post');
         $user->givePermissionTo('delete post');
